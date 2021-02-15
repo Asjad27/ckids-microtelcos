@@ -1,128 +1,128 @@
-DBA,SE_T001_001
-101Netlink,22493
-AFES Network Services LLC,5958
-"AT&T Service, Inc.",25008549
-AVISP,4238
-Aan Chuuphan,415
-Access Media Holdings LLC,35
-AeroSurf,13822
-Antelecom Inc.,16199
-Applied Technology Group Inc,3262
-Ayera Technologies Inc,91897
-Beamspeed LLC,8086
-Cal-Ore Communications Inc.,9020
-Cal.net Inc.,173032
-CalDSL,35521
-CalNeva Broadband,6396
-Calaveras Telephone Company,10881
-California Broadband Services,13761
-Catalina Broadband Solutions,3595
-Central Coast Internet,3943
-Charter Communications Inc,19101320
-City of Lompoc (LompocNet),12969
-ColfaxNet,33771
-Com-Pair Services,40050
-Comcast,11953465
-Common Networks,46606
-Conifer Communications,35079
-ConnectAnza,8075
-ConnectTo Communications,161607
-Consolidated Communications,581443
-"Consolidated Smart Broadband Systems, LLC",43038
-Cox Communications,3194367
-Cruzio,51378
-DM-Tech Internet,19208
-"DigitalPath, Inc.",188200
-Dillon Beach Internet Service,259
-Ducor Telephone Company,2397
-"Esparto Broadband, Inc.",4228
-"Etheric Networks, Inc.",127875
-"FlashByte Digital, LLC",5752
-Fort Mojave Telecommunications Inc,3030
-FractalVision,1717
-Frontier Communications,7965077
-Further Reach,5523
-GeoLinks,183977
-"Giggle Fiber, LLC",74845
-Golden Valley Cable,757
-"Google Fiber California, LLC",38186
-Hankins Information Technology,6184
-Horizon Cable TV,2931
-IWVISP,13905
-Impulse Internet Services,6180
-Internet Free Planet,16580
-Inyo Networks,8316
-Kern Valley Wireless,11260
-Kingsburg Media Foundation,8115
-Lake County Broadband Solutions,5458
-Lone Pine Communications,2223
-"MINetworks, inc.",3582
-Mediacom California LLC,148178
-MountainMesh,4155
-Napanet Internet Services,26016
-NetVelocite,3523
-North Coast Internet,7841
-Northland Communications,37700
-OACYS Technology,71483
-Oasis Broadband,12045
-Outback Internet,16050
-Pacific Lightwave Inc,10782
-Paxio,18390
-Peak WiFi,21281
-Pinnacles Telephone Co.,868
-PlumasSierra,15002
-Ponderosa Edge,2151
-Race Communications,39420
-"Ranch Wifi, LLC",44577
-Raw Bandwidth Communications,53149
-"Razzo Link, Inc.",64358
-Red Shift,10871
-Remotely Located,6446
-Root Automation,10477
-Rural Broadband Now LLC,307
-SBC-Wireless Inc.,10005
-San Bruno CityNet Services,40863
-San Diego Broadband,72193
-Sebastian - Audeamus,2425
-Sebastian - Foresthill,5839
-Sebastian - Kerman,21183
-Shastabeam,48706
-Sierra Nevada Communications,1727
-Sierra Tel Internet,35096
-Siskiyou Telephone Company,7251
-SkyHi Broadband,9603
-SmarterBroadband,45689
-SnowCrest Telephone Inc,24932
-"Softcom Internet Communications, Inc.",48090
-Sonic.net,2467028
-SouthValleyInternet,39757
-Southern California Telephone Co,19179
-Stream IT Networks LLC,2466
-"Succeed, Inc.",33563
-Suddenlink Communications,201753
-Surfnet Communications,47346
-Sylvernet,1250
-TDS TELECOM,7715
-Tekify Fiber & Wireless,9684
-The Ponderosa Telephone Co.,15287
-Tsunami-Wireless,2721
-Ukiah Wireless,15718
-"Ultimate Internet Access, Inc.",11545
-Valley Internet,19583
-Vast Networks,12
-Velociter Wireless,40175
-"Velocity Communications, Inc.",7941
-"Vista Broadband Networks, Inc.",42624
-Volcano Internet Provider,29024
-WISPRENN,40495
-Warp2 inc,16202
-Wave Broadband,919117
-"WebPerception, LLC.",41922
-"Webpass, Inc.",123449
-WillitsOnline,17470
-Wilson Creek Communications,13394
-Winters Broadband LLC,8049
-Zeta Broadband,36271
-Zito Media,42981
-eastsierra.net,134
-unWired Broadband Inc,244489
+DBA,Population,Households
+101Netlink,22493,9475
+AFES Network Services LLC,5958,2180
+"AT&T Service, Inc.",25008549,8573657
+AVISP,4238,1653
+Aan Chuuphan,415,171
+Access Media Holdings LLC,35,24
+AeroSurf,13822,4926
+Antelecom Inc.,16199,5551
+Applied Technology Group Inc,3262,997
+Ayera Technologies Inc,91897,29786
+Beamspeed LLC,8086,2514
+Cal-Ore Communications Inc.,9020,3659
+Cal.net Inc.,173032,62487
+CalDSL,35521,10221
+CalNeva Broadband,6396,2182
+Calaveras Telephone Company,10881,4104
+California Broadband Services,13761,4868
+Catalina Broadband Solutions,3595,1430
+Central Coast Internet,3943,1210
+Charter Communications Inc,19101320,6193806
+City of Lompoc (LompocNet),12969,4748
+ColfaxNet,33771,13679
+Com-Pair Services,40050,15712
+Comcast,11953465,4251017
+Common Networks,46606,19391
+Conifer Communications,35079,14740
+ConnectAnza,8075,3209
+ConnectTo Communications,161607,61774
+Consolidated Communications,581443,215114
+"Consolidated Smart Broadband Systems, LLC",43038,22942
+Cox Communications,3194367,1125514
+Cruzio,51378,18952
+DM-Tech Internet,19208,6884
+"DigitalPath, Inc.",188200,74049
+Dillon Beach Internet Service,259,132
+Ducor Telephone Company,2397,841
+"Esparto Broadband, Inc.",4228,1374
+"Etheric Networks, Inc.",127875,44940
+"FlashByte Digital, LLC",5752,2560
+Fort Mojave Telecommunications Inc,3030,1168
+FractalVision,1717,538
+Frontier Communications,7965077,2595458
+Further Reach,5523,2509
+GeoLinks,183977,65690
+"Giggle Fiber, LLC",74845,26149
+Golden Valley Cable,757,294
+"Google Fiber California, LLC",38186,16931
+Hankins Information Technology,6184,2025
+Horizon Cable TV,2931,1512
+IWVISP,13905,5631
+Impulse Internet Services,6180,2497
+Internet Free Planet,16580,6563
+Inyo Networks,8316,2571
+Kern Valley Wireless,11260,5310
+Kingsburg Media Foundation,8115,2717
+Lake County Broadband Solutions,5458,2193
+Lone Pine Communications,2223,924
+"MINetworks, inc.",3582,1532
+Mediacom California LLC,148178,59480
+MountainMesh,4155,1592
+Napanet Internet Services,26016,10170
+NetVelocite,3523,1061
+North Coast Internet,7841,3178
+Northland Communications,37700,16200
+OACYS Technology,71483,21172
+Oasis Broadband,12045,5016
+Outback Internet,16050,6111
+Pacific Lightwave Inc,10782,3553
+Paxio,18390,8344
+Peak WiFi,21281,8409
+Pinnacles Telephone Co.,868,324
+PlumasSierra,15002,6311
+Ponderosa Edge,2151,808
+Race Communications,39420,15323
+"Ranch Wifi, LLC",44577,14448
+Raw Bandwidth Communications,53149,24766
+"Razzo Link, Inc.",64358,20582
+Red Shift,10871,3179
+Remotely Located,6446,2524
+Root Automation,10477,4486
+Rural Broadband Now LLC,307,109
+SBC-Wireless Inc.,10005,3923
+San Bruno CityNet Services,40863,14549
+San Diego Broadband,72193,25348
+Sebastian - Audeamus,2425,782
+Sebastian - Foresthill,5839,2350
+Sebastian - Kerman,21183,5773
+Shastabeam,48706,18889
+Sierra Nevada Communications,1727,841
+Sierra Tel Internet,35096,14581
+Siskiyou Telephone Company,7251,3118
+SkyHi Broadband,9603,3689
+SmarterBroadband,45689,18898
+SnowCrest Telephone Inc,24932,10648
+"Softcom Internet Communications, Inc.",48090,15981
+Sonic.net,2467028,1032294
+SouthValleyInternet,39757,12203
+Southern California Telephone Co,19179,6552
+Stream IT Networks LLC,2466,930
+"Succeed, Inc.",33563,12053
+Suddenlink Communications,201753,82077
+Surfnet Communications,47346,17304
+Sylvernet,1250,355
+TDS TELECOM,7715,2953
+Tekify Fiber & Wireless,9684,3262
+The Ponderosa Telephone Co.,15287,5886
+Tsunami-Wireless,2721,1259
+Ukiah Wireless,15718,5894
+"Ultimate Internet Access, Inc.",11545,4525
+Valley Internet,19583,7844
+Vast Networks,12,3
+Velociter Wireless,40175,13407
+"Velocity Communications, Inc.",7941,3222
+"Vista Broadband Networks, Inc.",42624,16428
+Volcano Internet Provider,29024,12428
+WISPRENN,40495,13518
+Warp2 inc,16202,6300
+Wave Broadband,919117,339536
+"WebPerception, LLC.",41922,17175
+"Webpass, Inc.",123449,70410
+WillitsOnline,17470,6755
+Wilson Creek Communications,13394,5253
+Winters Broadband LLC,8049,2941
+Zeta Broadband,36271,13845
+Zito Media,42981,15576
+eastsierra.net,134,62
+unWired Broadband Inc,244489,73124
