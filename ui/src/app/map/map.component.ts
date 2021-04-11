@@ -35,7 +35,7 @@ export class MapComponent implements AfterViewInit {
   }
 
   private getPopup(returnedFeature: any): string {
-    if (this.currentLayer === 'Has Local') {
+    if (this.currentLayer === 'Has Local ISP') {
       return '<b>GEOID: </b>' + returnedFeature.properties.GEOID + '<br />'
         + '<b>Has local ISP: </b>' + String(Boolean(returnedFeature.properties.has_local)).replace(/^\w/, c => c.toUpperCase());
     } else if (this.currentLayer === 'OOKLA Download') {
@@ -117,7 +117,7 @@ export class MapComponent implements AfterViewInit {
 
     const overlayMaps = {
       None: none,
-      'Has Local': hasLocal,
+      'Has Local ISP': hasLocal,
       'Max Download': maxDownload,
       'OOKLA Download': ooklaDownload,
     };
@@ -130,9 +130,9 @@ export class MapComponent implements AfterViewInit {
       maxDownloadLegend.remove();
       this.map.closePopup();
       // @ts-ignore
-      if (e.name === 'Has Local') {
+      if (e.name === 'Has Local ISP') {
         hasLocalLegend.addTo(this.map);
-        this.currentLayer = 'Has Local';
+        this.currentLayer = 'Has Local ISP';
       }
       // @ts-ignore
       else if (e.name === 'OOKLA Download') {
