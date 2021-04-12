@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class BlockGroupsService {
-  private SERVER_URL = 'http://localhost:8080';
+  public static SERVER_URL = 'http://localhost:8080';
 
   constructor(private http: HttpClient) {
   }
@@ -32,6 +32,6 @@ export class BlockGroupsService {
       responseType: 'json'
     };
     // @ts-ignore
-    return this.http.get(this.SERVER_URL + '/geoserver/block_groups/wms', options);
+    return this.http.get(BlockGroupsService.SERVER_URL + '/geoserver/block_groups/wms', options);
   }
 }

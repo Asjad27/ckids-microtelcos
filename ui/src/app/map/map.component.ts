@@ -50,7 +50,7 @@ export class MapComponent implements AfterViewInit {
 
   // tslint:disable-next-line:typedef
   private initBlockGroupsLayers() {
-    const hasLocalLayer = L.tileLayer.wms('http://localhost:8080/geoserver/block_groups/wms', {
+    const hasLocalLayer = L.tileLayer.wms(BlockGroupsService.SERVER_URL + '/geoserver/block_groups/wms', {
       layers: 'block_groups',
       format: 'image/png',
       maxZoom: 18,
@@ -65,12 +65,12 @@ export class MapComponent implements AfterViewInit {
       div.innerHTML +=
         '<div style="text-align: center; background-color: white">' +
         '<b> Legend </b></br>' +
-        '<img src="http://localhost:8080/geoserver/wms?STYLE=has_local&REQUEST=GetLegendGraphic&VERSION=1.3.0&FORMAT=image/png&LAYER=block_groups:block_groups&fontAntiAliasing:true" alt="legend">' +
+        '<img src="' + BlockGroupsService.SERVER_URL + '/geoserver/wms?STYLE=has_local&REQUEST=GetLegendGraphic&VERSION=1.3.0&FORMAT=image/png&LAYER=block_groups:block_groups&fontAntiAliasing:true" alt="legend">' +
         '</div>';
       return div;
     };
 
-    const ooklaDownloadLayer = L.tileLayer.wms('http://localhost:8080/geoserver/block_groups/wms', {
+    const ooklaDownloadLayer = L.tileLayer.wms(BlockGroupsService.SERVER_URL + '/geoserver/block_groups/wms', {
       layers: 'block_groups',
       format: 'image/png',
       maxZoom: 18,
@@ -85,12 +85,12 @@ export class MapComponent implements AfterViewInit {
       div.innerHTML +=
         '<div style="text-align: center; background-color: white">' +
         '<b> Legend </b></br>' +
-        '<img src="http://localhost:8080/geoserver/wms?STYLE=ookla_download&REQUEST=GetLegendGraphic&VERSION=1.3.0&FORMAT=image/png&LAYER=block_groups:block_groups&fontAntiAliasing:true" alt="legend">' +
+        '<img src="' + BlockGroupsService.SERVER_URL + '/geoserver/wms?STYLE=ookla_download&REQUEST=GetLegendGraphic&VERSION=1.3.0&FORMAT=image/png&LAYER=block_groups:block_groups&fontAntiAliasing:true" alt="legend">' +
         '</div>';
       return div;
     };
 
-    const maxDownloadLayer = L.tileLayer.wms('http://localhost:8080/geoserver/block_groups/wms', {
+    const maxDownloadLayer = L.tileLayer.wms(BlockGroupsService.SERVER_URL + '/geoserver/block_groups/wms', {
       layers: 'block_groups',
       format: 'image/png',
       maxZoom: 18,
@@ -105,7 +105,7 @@ export class MapComponent implements AfterViewInit {
       div.innerHTML +=
         '<div style="text-align: center; background-color: white">' +
         '<b> Legend </b></br>' +
-        '<img src="http://localhost:8080/geoserver/wms?STYLE=max_download&REQUEST=GetLegendGraphic&VERSION=1.3.0&FORMAT=image/png&LAYER=block_groups:block_groups&fontAntiAliasing:true" alt="legend">' +
+        '<img src="' + BlockGroupsService.SERVER_URL + '/geoserver/wms?STYLE=max_download&REQUEST=GetLegendGraphic&VERSION=1.3.0&FORMAT=image/png&LAYER=block_groups:block_groups&fontAntiAliasing:true" alt="legend">' +
         '</div>';
       return div;
     };
