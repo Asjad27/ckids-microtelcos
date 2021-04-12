@@ -179,7 +179,14 @@ export class MapComponent implements AfterViewInit {
       'Terrain Ruggedness': terrain,
     };
 
-    L.control.layers(overlayMaps).addTo(this.map);
+    const layerControl = L.control.layers(overlayMaps).addTo(this.map);
+    L.control.scale().addTo(this.map);
+
+    const layerControlElements = layerControl.getContainer()?.childNodes[1].childNodes[0];
+    layerControlElements?.childNodes.forEach(element => {
+      // @ts-ignore
+      element.firstChild?.firstChild.style.all = 'revert';
+    });
 
     this.map.on('baselayerchange', (e: LeafletEvent): void => {
       hasLocalLegend.remove();

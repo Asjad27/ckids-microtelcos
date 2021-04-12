@@ -1,13 +1,58 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
   <title>Microtelcos - California</title>
   <base href="/">
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
-<body>
-  <app-root></app-root>
+<body class="is-preload">
+
+<!-- Sidebar -->
+<section id="sidebar">
+  <div class="inner">
+    <nav>
+      <ul>
+        <li><a href="#intro">Welcome</a></li>
+        <li><a href="#map">Map</a></li>
+      </ul>
+    </nav>
+  </div>
+</section>
+
+<div id="wrapper">
+
+  <section id="intro" class="wrapper style1 fullscreen fade-up">
+    <div class="inner" style="background: rgba(250, 250, 250, 0.2);">
+      <h1>Microtelcos - California</h1>
+      <p>Project <b>Microtelcos and the Digital Divide in CA</b> for <i>CKIDS Datafest Spring 2021</i></p>
+      <ul class="actions">
+        <li><a href="#map" class="button scrolly">View Map</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="map" class="wrapper style2 spotlights fullscreen">
+    <section>
+      <div class="content">
+          <app-root></app-root>
+      </div>
+    </section>
+  </section>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
 </body>
 </html>
