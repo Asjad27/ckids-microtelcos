@@ -40,10 +40,16 @@ export class MapComponent implements AfterViewInit {
         + '<b>Has local ISP: </b>' + String(Boolean(returnedFeature.properties.has_local)).replace(/^\w/, c => c.toUpperCase());
     } else if (this.currentLayer === 'OOKLA Download') {
       return '<b>GEOID: </b>' + returnedFeature.properties.GEOID + '<br />'
-        + '<b>Average Download Speed (OOKLA): </b>' + (returnedFeature.properties.avg_d_kbps / 1000.0).toPrecision(3);
+        + '<b>Average Download Speed (OOKLA): </b>' + (returnedFeature.properties.avg_d_kbps / 1000.0).toPrecision(3) + ' Mbps';
     } else if (this.currentLayer === 'Max Download') {
       return '<b>GEOID: </b>' + returnedFeature.properties.GEOID + '<br />'
-        + '<b>Average Max Download Speed: </b>' + (returnedFeature.properties.avg_max_dn).toPrecision(5);
+        + '<b>Average Max Download Speed: </b>' + (returnedFeature.properties.avg_max_dn).toPrecision(5) + ' Mbps';
+    } else if (this.currentLayer === 'Urban/Rural') {
+      return '<b>GEOID: </b>' + returnedFeature.properties.GEOID + '<br />'
+        + '<b>Classification: </b>' + (returnedFeature.properties.urban_inde === 1 ? 'Small Rural Areas' :
+          returnedFeature.properties.urban_inde === 2 ? 'Moderate Rural Areas' :
+            returnedFeature.properties.urban_inde === 3 ? 'Suburban Rural Areas' :
+              'Urban Areas');
     }
     return '';
   }
@@ -110,16 +116,38 @@ export class MapComponent implements AfterViewInit {
       return div;
     };
 
+    const urbanLayer = L.tileLayer.wms(BlockGroupsService.SERVER_URL + '/geoserver/block_groups/wms', {
+      layers: 'block_groups',
+      format: 'image/png',
+      maxZoom: 18,
+      minZoom: 6,
+      styles: 'urban_index',
+      transparent: true
+    });
+
+    const urbanLegend = L.control.zoom({position: 'bottomright'});
+    urbanLegend.onAdd = () => {
+      const div = L.DomUtil.create('div', 'info legend');
+      div.innerHTML +=
+        '<div style="text-align: center; background-color: white">' +
+        '<b> Legend </b></br>' +
+        '<img src="' + BlockGroupsService.SERVER_URL + '/geoserver/wms?STYLE=urban_index&REQUEST=GetLegendGraphic&VERSION=1.3.0&FORMAT=image/png&LAYER=block_groups:block_groups&fontAntiAliasing:true" alt="legend">' +
+        '</div>';
+      return div;
+    };
+
     const none = L.layerGroup([]);
     const hasLocal = L.layerGroup([hasLocalLayer]);
     const ooklaDownload = L.layerGroup([ooklaDownloadLayer]);
     const maxDownload = L.layerGroup([maxDownloadLayer]);
+    const urban = L.layerGroup([urbanLayer]);
 
     const overlayMaps = {
       None: none,
       'Has Local ISP': hasLocal,
       'Max Download': maxDownload,
       'OOKLA Download': ooklaDownload,
+      'Urban/Rural': urban,
     };
 
     L.control.layers(overlayMaps).addTo(this.map);
@@ -128,6 +156,7 @@ export class MapComponent implements AfterViewInit {
       hasLocalLegend.remove();
       ooklaDownloadLegend.remove();
       maxDownloadLegend.remove();
+      urbanLegend.remove();
       this.map.closePopup();
       // @ts-ignore
       if (e.name === 'Has Local ISP') {
@@ -143,6 +172,11 @@ export class MapComponent implements AfterViewInit {
       else if (e.name === 'Max Download') {
         maxDownloadLegend.addTo(this.map);
         this.currentLayer = 'Max Download';
+      }
+      // @ts-ignore
+      else if (e.name === 'Urban/Rural') {
+        urbanLegend.addTo(this.map);
+        this.currentLayer = 'Urban/Rural';
       }
     });
 
