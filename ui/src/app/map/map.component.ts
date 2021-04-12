@@ -46,10 +46,17 @@ export class MapComponent implements AfterViewInit {
         + '<b>Average Max Download Speed: </b>' + (returnedFeature.properties.avg_max_dn).toPrecision(5) + ' Mbps';
     } else if (this.currentLayer === 'Urban/Rural') {
       return '<b>GEOID: </b>' + returnedFeature.properties.GEOID + '<br />'
-        + '<b>Classification: </b>' + (returnedFeature.properties.urban_inde === 1 ? 'Small Rural Areas' :
-          returnedFeature.properties.urban_inde === 2 ? 'Moderate Rural Areas' :
-            returnedFeature.properties.urban_inde === 3 ? 'Suburban Rural Areas' :
-              'Urban Areas');
+        + '<b>Classification: </b>' + (returnedFeature.properties.urban_inde === 1 ? 'Small Rural Area' :
+          returnedFeature.properties.urban_inde === 2 ? 'Moderate Rural Area' :
+            returnedFeature.properties.urban_inde === 3 ? 'Suburban Area' :
+              'Urban Area');
+    } else if (this.currentLayer === 'Terrain Ruggedness') {
+      return '<b>GEOID: </b>' + returnedFeature.properties.GEOID + '<br />'
+        + '<b>Classification: </b>' + (returnedFeature.properties.tri <= 80 ? 'Level Terrain' :
+          returnedFeature.properties.tri <= 116 ? 'Nearly Level Terrain' :
+            returnedFeature.properties.tri <= 497 ? 'Intermediately Rugged Terrain' :
+              returnedFeature.properties.tri <= 958 ? 'Highly Rugged Terrain' :
+                'Extremely Rugged Terrain');
     }
     return '';
   }
@@ -136,11 +143,32 @@ export class MapComponent implements AfterViewInit {
       return div;
     };
 
+    const terrainLayer = L.tileLayer.wms(BlockGroupsService.SERVER_URL + '/geoserver/block_groups/wms', {
+      layers: 'block_groups',
+      format: 'image/png',
+      maxZoom: 18,
+      minZoom: 6,
+      styles: 'terrain',
+      transparent: true
+    });
+
+    const terrainLegend = L.control.zoom({position: 'bottomright'});
+    terrainLegend.onAdd = () => {
+      const div = L.DomUtil.create('div', 'info legend');
+      div.innerHTML +=
+        '<div style="text-align: center; background-color: white">' +
+        '<b> Legend </b></br>' +
+        '<img src="' + BlockGroupsService.SERVER_URL + '/geoserver/wms?STYLE=terrain&REQUEST=GetLegendGraphic&VERSION=1.3.0&FORMAT=image/png&LAYER=block_groups:block_groups&fontAntiAliasing:true" alt="legend">' +
+        '</div>';
+      return div;
+    };
+
     const none = L.layerGroup([]);
     const hasLocal = L.layerGroup([hasLocalLayer]);
     const ooklaDownload = L.layerGroup([ooklaDownloadLayer]);
     const maxDownload = L.layerGroup([maxDownloadLayer]);
     const urban = L.layerGroup([urbanLayer]);
+    const terrain = L.layerGroup([terrainLayer]);
 
     const overlayMaps = {
       None: none,
@@ -148,6 +176,7 @@ export class MapComponent implements AfterViewInit {
       'Max Download': maxDownload,
       'OOKLA Download': ooklaDownload,
       'Urban/Rural': urban,
+      'Terrain Ruggedness': terrain,
     };
 
     L.control.layers(overlayMaps).addTo(this.map);
@@ -157,6 +186,7 @@ export class MapComponent implements AfterViewInit {
       ooklaDownloadLegend.remove();
       maxDownloadLegend.remove();
       urbanLegend.remove();
+      terrainLegend.remove();
       this.map.closePopup();
       // @ts-ignore
       if (e.name === 'Has Local ISP') {
@@ -177,6 +207,11 @@ export class MapComponent implements AfterViewInit {
       else if (e.name === 'Urban/Rural') {
         urbanLegend.addTo(this.map);
         this.currentLayer = 'Urban/Rural';
+      }
+      // @ts-ignore
+      else if (e.name === 'Terrain Ruggedness') {
+        terrainLegend.addTo(this.map);
+        this.currentLayer = 'Terrain Ruggedness';
       }
     });
 
